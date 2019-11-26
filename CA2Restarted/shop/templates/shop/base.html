@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <title>{% block title %}The Newsstand{% endblock %}</title>
   <link rel="stylesheet" href="../../static/css/base.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
-  <div id="header">
-    <a href="/" class="logo">The Newsstand</a>
-  </div>
-  <div id="subheader">
-    <div class="cart">
-        {% with total_item=cart|length %}
-         {% if cart|length > 0 %}
-         Your Cart:
-         <a href="{% url 'cart:cart_detail' %}">
-           {{ total_items }} item{{ total_items|pluralize }},
-           €{{ cart.get_total_price }}
-         </a>
-         {% else %}
-         Your cart is empty
-         {% endif %}
-        {% endwith %}
-    </div>
+  <div id="nav">
+      <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand text-alert" href="#">The Newsstand</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+             <li><a href="{% url 'cart:cart_detail' %}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#">Login</a></li>
+            </ul>
+          </div>
+        </nav>     
   </div>
   <div id="content">
     {% block content %}
