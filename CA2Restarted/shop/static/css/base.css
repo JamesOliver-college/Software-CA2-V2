@@ -54,36 +54,7 @@ table th, table td {
     margin:0;
 }
 
-tbody tr:nth-child(odd) {
-    background:#efefef;
-}
 
-tbody tr.subtotal {
-    background:#ccc;
-}
-
-thead th, tbody tr.total {
-    background:#5993bb;
-    color:#fff;
-    font-weight:bold;
-}
-
-table.cart {
-    margin-bottom:40px;
-}
-
-table.cart img {
-    width:180px;
-}
-
-tbody td.num {
-    text-align:right;
-}
-
-td input[type="submit"] {
-    font-size:12px;
-    padding:4px 10px;
-}
 
 form p label, form p input {
     float:left;

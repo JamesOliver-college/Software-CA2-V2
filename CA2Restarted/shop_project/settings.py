@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
+
+STRIPE_SECRET_KEY = 'sk_test_3oF1DnxhQH0lqcZiAWpg7ARj00eTct9t8B'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_ncqtjlog3GD4YVJz6HMSNGDS00rfyhe6Jn'

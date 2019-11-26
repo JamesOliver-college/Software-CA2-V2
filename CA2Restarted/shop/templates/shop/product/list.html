@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-  {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
 
 {% block content %}
-  <div id="sidebar">
+<!--  <div id="sidebar">
     <h3>Categories</h3>
     <ul>
       <li {% if not category %}class="selected"{% endif %}>
@@ -19,10 +19,10 @@
       {% endfor %}
     </ul>
   </div>
-  <div id="main" class="product-list">
-    <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-    {% for product in products %}
-      <div class="item">
+  <div id="main">
+    <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1> -->
+
+<!--<div class="item">
         <a href="{{ product.get_absolute_url }}">
           <img src="{% if product.image %}
                         {{ product.image.url }}
@@ -31,8 +31,24 @@
                     {% endif %}">
         </a>
         <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-        €{{ product.price }}
-      </div>
+        €{{ product.price }} -->
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+    <tr>
+      <td><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
+      <td>€{{ product.price }}</td>
+    </tr>
     {% endfor %}
-  </div>
+  </tbody>
+</table>
+</div>
+
+</div>
 {% endblock %}

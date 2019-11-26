@@ -23,21 +23,16 @@ Your Cart
                 <tr>
                     <td>
                         <a href="{{ product.get_absolute_url }}">
-                        <img src="{% if product.image.url %}
-                                       {{ product.image.url }}
-                                 {% else %}
-                                       {% static 'img/no_image.png' }
-                                 {% endif %}">
+                        Should be an image here
                         </a>
                     </td>
                     <td>{{ product.name }}</td>
                     <td><form action="{% url 'cart:cart_add' product.id %}" method="post">
                         {{ item.update_quantity_form.quantity }}
-                        {{ item.update_quantity_form.quantity }}
                         <input type="submit" value="Update">
                         {% csrf_token %}
                     </form></td>
-                    <td><a href="{% url 'cart:cart_remove' product_id %}">Remove</a></td>
+                    <td><a href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
                     <td class="num">€{{ item.price }}</td>
                     <td class="num">€{{ item.total_price }}</td>
                 </tr>
