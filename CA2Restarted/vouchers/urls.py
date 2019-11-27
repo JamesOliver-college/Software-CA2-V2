@@ -3,6 +3,6 @@ from . import views
 
 app_name = 'vouchers'
 
-url_patterns = [
+urlpatterns = [
     path('apply/', views.voucher_apply, name='apply'),
 ]
