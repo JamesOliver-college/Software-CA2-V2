@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'orders.apps.OrdersConfig',
     'cart.apps.CartConfig',
+    'vouchers.apps.VouchersConfig',
     'stripe',
 ]
 

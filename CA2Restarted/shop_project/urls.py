@@ -27,6 +27,7 @@ urlpatterns = [
     path('account/create/', views.signupView, name='signup'),
     path('account/login/', views.signinView, name='signin'),
     path('account/logout/', views.signoutView, name='logout'),
+    path('vouchers/', include('vouchers.urls', namespace='vouchers')),
 ]
 
 if settings.DEBUG:
