@@ -20,7 +20,7 @@
             <ul class="nav navbar-nav navbar-right">
              <li><a href="{% url 'cart:cart_detail' %}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
              {% if request.user.is_authenticated %}
-              <li><a href="{% url 'logout' %">Logout</a></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
              {% else %}
               <li><a href="{% url 'signup' %}">Sign Up</a></li>
               <li><a href="{% url 'signin'%}">Login</a></li>

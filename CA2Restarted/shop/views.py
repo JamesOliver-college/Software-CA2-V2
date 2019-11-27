@@ -54,7 +54,7 @@ def signinView(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('shop')
+                return redirect('shop:product_list')
             else:
                 return redirect('signup')
     else:
@@ -63,4 +63,4 @@ def signinView(request):
 
 def signoutView(request):
     logout(request)
-    return redirect('signin')
+    return redirect('shop:product_list')
