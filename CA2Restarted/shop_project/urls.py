@@ -28,6 +28,7 @@ urlpatterns = [
     path('account/login/', views.signinView, name='signin'),
     path('account/logout/', views.signoutView, name='logout'),
     path('vouchers/', include('vouchers.urls', namespace='vouchers')),
+    path('news/', include('news.urls', namespace='news')),
 ]
 
 if settings.DEBUG:

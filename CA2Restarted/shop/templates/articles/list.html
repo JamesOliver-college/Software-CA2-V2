@@ -1,0 +1,43 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+
+<div class="block container">
+    <div class="row">
+        <h1>Latest Articles</h1>
+        <div class="col-sm-6">
+            <h4>Crisis on Infinite Earths is being Adapted to TV Next Week</h4>
+            <sub>by James Oliver</sub>
+            <img src="../../static/img/crisisoninfiniteearths.png">
+            <p>As a recent fan of DC Comics (my interest starting with a game from 2012), I had no idea about many of
+                the old stories to be found in DC's continuity. One of the ones I always heard about, however, was
+                Crisis
+                on Infinite Earths. This was a big deal. When the Multiverse became one Universe, when heroes from
+                different Earths
+                worked together to survive it.
+            </p>
+            <p>If you the follow the Arrowverse (DC's shared TV universe on the CW channel that started with Arrow), you
+                may know
+                that Crisis on Infinite Earths is being adapted to TV starting this Sunday. The show will...
+                <a href="#">read more</a>
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <h4>Black Widow Trailer Released</h4>
+            <sub>by James Oliver</sub>
+            <p><img id="blackwidow" src="../../static/img/black-widow-logo.png"></p>
+            <p>Avengers Endgame was arguably the best superhero movie released last year. It sent off some of the heroes
+                we grew to
+                know and love over the last twelve years of Marvel movies. While the film took on a very final tone, it
+                is far from the end for the Marvel Cinematic Universe.
+            </p>
+            <p>After Spider-Man: Far From Home came out this summer to conclude what is dubbed 'the Infinity Saga' of
+                films that started with 2008's Iron Man, the latest film is about Black Widow.
+                While Avengers: Age of Ultron gave us some cryptic hints to the Black Widow's past, it seems next year
+                we will finally get to know more about the character.
+                <a href="#">read more</a>
+            </p>
+        </div>
+    </div>
+</div>
+<footer>Looks like that's it for now. Check back again tomorrow. In the mean time, click <a href="{% url 'shop:product_list' %}">here</a> to return home.</footer>
+{% endblock %}
