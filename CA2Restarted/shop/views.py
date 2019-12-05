@@ -6,6 +6,7 @@ from .forms import SignUpForm
 from cart.forms import CartAddProductForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
+from emailapp.email import Email
 
 def product_list(request, category_slug=None):
     category = None
@@ -38,12 +39,14 @@ def signupView(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            user_email = form.cleaned_data.get('email')
             signup_user = User.objects.get(username=username)
             customer_group = Group.objects.get(name='Customer')
             customer_group.user_set.add(signup_user)
     else:
         form = SignUpForm()
     return render(request, 'accounts/signup.html', {'form':form})
+    Email.sendSignUpConfirmation(request, username, user_email)
 
 def signinView(request):
     if request.method == 'POST':
