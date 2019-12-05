@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'vouchers.apps.VouchersConfig',
     'news.apps.NewsConfig',
+    'emailapp.apps.EmailappConfig',
     'stripe',
 ]
 
