@@ -63,6 +63,8 @@ class Cart(object):
     def get_discount(self):
         if self.voucher:
             return(self.voucher.discount / Decimal('100')) * self.get_total_price
+        else:
+            return 0
     
     def get_total_price_after_discount(self):
-        return self.get_total_price() - self.get_discount
+        return self.get_total_price() - self.get_discount()
