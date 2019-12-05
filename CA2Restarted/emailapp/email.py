@@ -11,6 +11,7 @@ class Email:
         msg["Subject"] = "Account successfully created!!!"
         msg["From"] = "management@newsstand.com"
         msg["Date"] = formatdate(localtime=settings.EMAIL_USE_LOCALTIME)
+        msg["To"] = str(to_user_email)
         html = """<html><body><h2>Account has been created!
         Account Name: {}</h2></body></html>""".format(to_username)
         content = MIMEText(html, "html")
