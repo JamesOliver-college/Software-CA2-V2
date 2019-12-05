@@ -31,6 +31,7 @@ def cart_detail(request):
         item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'],
         'update': True})
 
-    voucher_apply_form = VoucherApplyForm
+    voucher_apply_form = VoucherApplyForm()
 
-    return render(request, 'cart/detail.html' , {'cart': cart, 'voucher_apply_form': voucher_apply_form})
+    return render(request, 'cart/detail.html' , {'cart': cart, 
+                                                 'voucher_apply_form': voucher_apply_form})
