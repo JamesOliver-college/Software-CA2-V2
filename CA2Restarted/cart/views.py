@@ -30,7 +30,11 @@ def cart_detail(request):
     for item in cart:
         item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'],
         'update': True})
-
+    total = int(Cart.get_total_price(cart))
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe_total = int(total * 100)
+    description = 'Newsstand Purchase'
+    data_key = settings.STRIPE_PUBLISHABLE_KEY
     voucher_apply_form = VoucherApplyForm
 
-    return render(request, 'cart/detail.html' , {'cart': cart, 'voucher_apply_form': voucher_apply_form})
+    return render(request, 'cart/detail.html' , dict(cart = cart, voucher_apply_form = voucher_apply_form, data_key = data_key, stripe_total = stripe_total, description = description))

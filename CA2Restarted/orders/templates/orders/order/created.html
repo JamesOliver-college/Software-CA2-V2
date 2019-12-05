@@ -8,4 +8,5 @@ Success
 <h1>Thank you</h1>
 <p>Your order has been successful</p>
 <p>Order: <bold>{{ order.id }}</bold></p>
+<a href="{% url 'shop:product_list' %}" class="buttonlight">Continue shopping</a>
 {% endblock %}

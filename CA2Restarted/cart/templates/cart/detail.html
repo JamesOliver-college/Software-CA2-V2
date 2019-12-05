@@ -23,7 +23,7 @@ Your Cart
                 <tr>
                     <td>
                         <a href="{{ product.get_absolute_url }}">
-                        Should be an image here
+                       {{ product.image }}
                         </a>
                     </td>
                     <td>{{ product.name }}</td>
@@ -72,6 +72,15 @@ Your Cart
     </form>
     <p class="text-right">
         <a href="{% url 'shop:product_list' %}" class="buttonlight">Continue shopping</a>
-        <a href="{% url 'orders:order_create' %}" class="button">Checkout</a>
+        <!--<a href="{% url 'orders:order_create' %}" class="button">Checkout</a>-->
+        <form action="{% url 'orders:order_create' %}" method ="POST">
+            {% csrf_token %}
+            <script src="https:checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{data_key}}"
+            data-name="Newsstand"
+            data-description="{{description}}"
+            data-amount="{{stripe_total}}"
+            data-currency="EUR"></script>
+        </form>
     </p>
-    {% endblock %}
+    {% endblock %}  
