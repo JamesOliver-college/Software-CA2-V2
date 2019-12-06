@@ -35,6 +35,7 @@ def cart_detail(request):
     stripe_total = int(total * 100)
     description = 'Newsstand Purchase'
     data_key = settings.STRIPE_PUBLISHABLE_KEY
-    voucher_apply_form = VoucherApplyForm
+    voucher_apply_form = VoucherApplyForm()
 
-    return render(request, 'cart/detail.html' , dict(cart = cart, voucher_apply_form = voucher_apply_form, data_key = data_key, stripe_total = stripe_total, description = description))
+    return render(request, 'cart/detail.html', {'cart': cart,
+                            'voucher_apply_form': voucher_apply_form})

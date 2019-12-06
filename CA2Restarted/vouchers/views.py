@@ -15,7 +15,7 @@ def voucher_apply(request):
                                          valid_from__lte=now,
                                          valid_to__gte=now,
                                          active=True)
-            request.session['voucher_id'] = voucher
+            request.session['voucher_id'] = voucher.id
         except Voucher.DoesNotExist:
             request.session['voucher_id'] = None
     return redirect('cart:cart_detail')
