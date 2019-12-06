@@ -25,7 +25,7 @@ def cart_remove(request, product_id):
     cart.remove(product)
     return redirect('cart:cart_detail')
 
-def cart_detail(request):
+def cart_detail(request, total=0, counter=0, cart_items = None):
     cart = Cart(request)
     for item in cart:
         item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'],
@@ -37,5 +37,4 @@ def cart_detail(request):
     data_key = settings.STRIPE_PUBLISHABLE_KEY
     voucher_apply_form = VoucherApplyForm()
 
-    return render(request, 'cart/detail.html', {'cart': cart,
-                            'voucher_apply_form': voucher_apply_form})
+    return render(request, 'cart/detail.html', {'cart': cart, 'voucher_apply_form': voucher_apply_form}, dict(cart_items = cart_items, total = total, counter = counter, data_key = data_key, stripe_total = stripe_total, description = description))

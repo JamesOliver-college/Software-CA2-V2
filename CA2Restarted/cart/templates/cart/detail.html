@@ -5,6 +5,13 @@ Your Cart
 {% endblock %}
 
 {% block content %}
+<script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
+<script src="//js.stripe.com/v2/"></script>
+<script>
+    (function() {
+        Stripe.setPublishableKey('pk_test_vEXkpq64Yzf53PKYafdrywof00jqNuNqi3');
+    })();
+</script>
     <h1>Your Cart</h1>
     <table>
         <thead>
